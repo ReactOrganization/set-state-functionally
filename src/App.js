@@ -32,10 +32,42 @@ class App extends Component {
     })
   }
 
+  twoIncrement = () => {
+    this.setState(prevState => {
+      return {
+        count: prevState.count + 2
+      }
+    })
+  }
+
+  threeIncrement = () => {
+    this.setState(prevState => {
+      return {
+        count: prevState.count + 3
+      }
+    })
+  }
+
   oneDecrement = () => {
     this.setState(prevState => {
       return {
-       count: prevState.count - 1 
+        count: prevState.count - 1 
+      }
+    })
+  }
+
+  twoDecrement = () => {
+    this.setState(prevState => {
+      return {
+        count: prevState.count - 2
+      }
+    })
+  }
+
+  threeDecrement = () => {
+    this.setState(prevState => {
+      return {
+        count: prevState.count - 3
       }
     })
   }
@@ -45,7 +77,7 @@ class App extends Component {
     return (
       <div className="App">
         {Object.keys(this.state.data).map((key, i) =>
-        <div>{key}</div>
+          <div>{key}</div>
         )}
         <h1>Numbers</h1>
         {this.state.count}
@@ -53,7 +85,12 @@ class App extends Component {
         <button onClick={this.reset}>Reset</button><br/>
         <button onClick={this.oneIncrement}>Increment by one</button> 
         <button onClick={this.oneDecrement}>Increment by one</button> 
-
+        <hr/>
+        <button onClick={this.twoIncrement}>Increment by two</button> 
+        <button onClick={this.twoDecrement}>Increment by two</button> 
+        <hr/>
+        <button onClick={this.threeIncrement}>Increment by three</button> 
+        <button onClick={this.threeDecrement}>Increment by three</button> 
       </div>
     );
   }
