@@ -48,6 +48,14 @@ class App extends Component {
     })
   }
 
+  fourIncrement = () => {
+    this.setState(prevState => {
+      return {
+        count: prevState.count + 4
+      }
+    })
+  }
+
   oneDecrement = () => {
     this.setState(prevState => {
       return {
@@ -72,6 +80,13 @@ class App extends Component {
     })
   }
 
+  fourDecrement = () => {
+    this.setState(prevState => {
+      return {
+        count: prevState.count - 4
+      }
+    })
+  }
 
   render() {
     return (
@@ -84,13 +99,16 @@ class App extends Component {
         <hr/>
         <button onClick={this.reset}>Reset</button><br/>
         <button onClick={this.oneIncrement}>Increment by one</button> 
-        <button onClick={this.oneDecrement}>Increment by one</button> 
+        <button onClick={this.oneDecrement}>Decrement by one</button> 
         <hr/>
         <button onClick={this.twoIncrement}>Increment by two</button> 
-        <button onClick={this.twoDecrement}>Increment by two</button> 
+        <button onClick={this.twoDecrement}>Decrement by two</button> 
         <hr/>
         <button onClick={this.threeIncrement}>Increment by three</button> 
-        <button onClick={this.threeDecrement}>Increment by three</button> 
+        <button onClick={this.threeDecrement}>Decrement by three</button> 
+        <hr/>
+        <button onClick={this.fourIncrement}>Increment by four</button> 
+        <button onClick={this.fourDecrement}>Decrement by four</button> 
       </div>
     );
   }
